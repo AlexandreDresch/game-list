@@ -3,6 +3,7 @@ import { View,
      Text,
       Image,
        StatusBar,
+       TouchableOpacity
     } from 'react-native';
 
 import { ButtonIcon } from "../../components/Buttonicon";
@@ -25,9 +26,9 @@ export function SignIn() {
 
             <View style={styles.content}>
                 <Text style={styles.title}>
-                    Organize {`\n`}
-                    your games {`\n`}
-                    easily
+                    Conect {'\n'}
+                    and organize {'\n'}
+                    your games
                 </Text>
 
                 <Text style={styles.subtitle}>
@@ -35,9 +36,10 @@ export function SignIn() {
                     games with your friends
                 </Text>
 
-                <ButtonIcon />
+                <ButtonIcon 
+                title="Join with Discord"/>
             </View>
 
         </View>
-    )
+    );
 };
