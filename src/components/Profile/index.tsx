@@ -9,21 +9,22 @@ export function Profile() {
         <View style={styles.container}>
 
             <Avatar urlImage="https://github.com/AlexandreDresch.png"/>
+            <View>
+                <View style={styles.user}>
+                    <Text style={styles.greeting}>
+                        Hello, 
+                    </Text>
 
-            <View style={styles.user}>
-                <Text style={styles.greeting}>
-                    Hello, 
+                    <Text style={styles.username}>
+                        Alexandre
+                    </Text>
+                    
+                </View>
+                    
+                <Text style={styles.message}> 
+                    Today is victory day. 
                 </Text>
-
-                <Text style={styles.username}>
-                    Alexandre
-                </Text>
-                
             </View>
-                
-            <Text style={styles.message}> 
-                Today is victory day. 
-            </Text>
         </View>
     )
 }
