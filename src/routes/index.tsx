@@ -1,5 +1,5 @@
 import React from "react";
-import { NavigationContainer, useNavigationContainerRef } from "@react-navigation/native"; 
+import { NavigationContainer } from "@react-navigation/native"; 
 
 import { AuthRoutes } from './auth.routes';
 import { Background } from "../components/Background";
