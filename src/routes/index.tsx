@@ -4,9 +4,15 @@ import { NavigationContainer } from "@react-navigation/native";
 import { AuthRoutes } from './auth.routes';
 
 export function Routes() {
-    return(        
-        <NavigationContainer>
+    return(      
+        <NavigationContainer
+        theme={{
+            colors: {
+              background: 'transparent', 
+            },
+          }}
+        >
             <AuthRoutes />
-        </NavigationContainer>        
+        </NavigationContainer>           
     )
 }
