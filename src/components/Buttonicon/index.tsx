@@ -3,8 +3,7 @@ import {
     Text, 
     Image,
     View,
-    TouchableOpacity,
-    TouchableOpacityProps
+    TouchableOpacity, TouchableOpacityProps
 } from 'react-native';
 
 import DiscordImg from '../../assets/discord.png';
