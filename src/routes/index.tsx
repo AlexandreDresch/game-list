@@ -8,7 +8,12 @@ export function Routes() {
         <NavigationContainer
         theme={{
             colors: {
+              primary: 'transparent',
               background: 'transparent', 
+              card: 'transparent',
+              text: 'transparent',
+              border: 'transparent',
+              notification: 'transparent',
             },
           }}
         >
