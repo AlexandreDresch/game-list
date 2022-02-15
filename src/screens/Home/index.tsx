@@ -7,6 +7,7 @@ import { ButtonAdd } from "../../components/ButtonAdd";
 import { CategorySelect } from "../../components/CategorySelect";
 import { ListHeader } from "../../components/ListHeader";
 import { Appointment } from "../../components/Appointment";
+import { ListDivider } from "../../components/ListDivider";
 
 import { styles } from "./styles";
 
@@ -40,8 +41,7 @@ export function Home() {
                 <Profile />
                 <ButtonAdd />
             </View>
-
-            <View>
+                        
                 <CategorySelect 
                     categorySelected={category}
                     setCategory={handleCategorySelect}
@@ -59,11 +59,11 @@ export function Home() {
                         renderItem={({ item }) => (
                             <Appointment data={item} />
                         )}
+                        ItemSeparatorComponent={() => <ListDivider />}
                         style={styles.matches}
                         showsVerticalScrollIndicator={false}
                     />
-                </View>            
-            </View>
+                </View>              
         </View>
     );
 };
