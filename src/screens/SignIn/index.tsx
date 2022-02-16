@@ -12,7 +12,7 @@ import { styles } from "./styles";
 
 
 export function SignIn() {
-    const navigation = useNavigation();
+    const navigation = useNavigation<any>();
 
     function handleSignIn() {
         navigation.navigate('Home');

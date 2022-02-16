@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, FlatList, Text } from 'react-native';
+import { View, FlatList } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 
 
@@ -13,9 +13,9 @@ import { ListDivider } from "../../components/ListDivider";
 import { styles } from "./styles";
 
 export function Home() {
+    const navigation = useNavigation<any>(); 
+    
     const [category, setCategory] = useState('')
-
-    const navigation = useNavigation();
 
     const appointments = [
         {

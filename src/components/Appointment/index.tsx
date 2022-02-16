@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity, TouchableOpacityProps } from "react-native";
 import { RectButton, RectButtonProps } from 'react-native-gesture-handler'
 
 import { styles } from "./styles";
@@ -26,7 +26,7 @@ export type AppointmentProps = {
     description: string;
 }
 
-type Props = RectButtonProps & {
+type Props = TouchableOpacityProps & {
     data: AppointmentProps;
 }
 
@@ -36,7 +36,9 @@ export function Appointment({ data, ...rest}: Props) {
     const { primary, on } = theme.colors;
 
     return(
-        <RectButton {...rest}>
+        <TouchableOpacity
+        activeOpacity={0.9}
+         {...rest}>
             <View style={styles.container}>
                 <GuildIcon />
 
@@ -74,6 +76,6 @@ export function Appointment({ data, ...rest}: Props) {
                     </View>
                 </View>
             </View>
-        </RectButton>
+        </TouchableOpacity>
     )
 }
