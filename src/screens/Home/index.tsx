@@ -29,7 +29,19 @@ export function Home() {
             category: '1',
             date: '06/22 at 08:40 PM',
             description: 'Day to win all!!'
-        }
+        },
+        {
+            id: '2',
+            guild: {
+                id: '1',
+                name: 'Legendary',
+                icon: null,
+                owner: false
+            },
+            category: '1',
+            date: '06/22 at 08:40 PM',
+            description: 'Day to win all!!'
+        },
     ]
 
     function handleCategorySelect(categoryId: string) {
