@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 import { Home } from '../screens/Home';
+import { AppointmentCreate } from "../screens/AppointmentCreate";
 import { AppointmentDetails } from "../screens/AppointmentDetails";
 import { SignIn } from '../screens/SignIn';
 
@@ -31,6 +32,10 @@ export function AuthRoutes() {
             <Screen
             name="AppointmentDetails"
             component={AppointmentDetails}            
+            />
+            <Screen
+            name="AppointmentCreate"
+            component={AppointmentCreate}            
             />
         </Navigator>
     )

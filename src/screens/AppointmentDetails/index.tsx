@@ -12,6 +12,7 @@ import { ListHeader } from "../../components/ListHeader";
 import { Header } from "../../components/Header";
 import { Member } from "../../components/Member";
 import { ListDivider } from "../../components/ListDivider";
+import { ButtonIcon } from "../../components/Buttonicon";
 
 export function AppointmentDetails() {
     const members = [
@@ -73,6 +74,11 @@ export function AppointmentDetails() {
                 ItemSeparatorComponent={() => <ListDivider/>}
                 style={styles.members}
             />
+            <View style={styles.footer}>
+                <ButtonIcon 
+                    title="Join the game"
+                />
+            </View>
 
         </Background>
     )
