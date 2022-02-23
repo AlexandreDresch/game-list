@@ -11,6 +11,7 @@ import { Appointment } from "../../components/Appointment";
 import { ListDivider } from "../../components/ListDivider";
 
 import { styles } from "./styles";
+import { Background } from "../../components/Background";
 
 export function Home() {
     const navigation = useNavigation<any>(); 
@@ -42,6 +43,54 @@ export function Home() {
             date: '06/22 at 08:40 PM',
             description: 'Day to win all!!'
         },
+        {
+            id: '3',
+            guild: {
+                id: '1',
+                name: 'Legendary',
+                icon: null,
+                owner: false
+            },
+            category: '4',
+            date: '06/22 at 08:40 PM',
+            description: 'Day to win all!!'
+        },
+        {
+            id: '5',
+            guild: {
+                id: '1',
+                name: 'Legendary',
+                icon: null,
+                owner: false
+            },
+            category: '1',
+            date: '06/22 at 08:40 PM',
+            description: 'Day to win all!!'
+        },
+        {
+            id: '6',
+            guild: {
+                id: '1',
+                name: 'Legendary',
+                icon: null,
+                owner: false
+            },
+            category: '1',
+            date: '06/22 at 08:40 PM',
+            description: 'Day to win all!!'
+        },
+        {
+            id: '7',
+            guild: {
+                id: '1',
+                name: 'Legendary',
+                icon: null,
+                owner: false
+            },
+            category: '1',
+            date: '06/22 at 08:40 PM',
+            description: 'Day to win all!!'
+        },
     ]
 
     function handleCategorySelect(categoryId: string) {
@@ -57,7 +106,7 @@ export function Home() {
     }
 
     return(
-        <View>
+        <Background>
             <View
                 style={styles.header}
             >
@@ -70,13 +119,12 @@ export function Home() {
                     setCategory={handleCategorySelect}
                 />
 
-                <View style={styles.content}>
-                    <ListHeader
-                        title="Scheduled matches"
-                        subtitle="Total 6"
-                    />
-                    
-                    <FlatList 
+                <ListHeader
+                    title="Scheduled matches"
+                    subtitle="Total 6"
+                />
+
+                <FlatList 
                         data={appointments}
                         keyExtractor={item => item.id}
                         renderItem={({ item }) => (
@@ -86,10 +134,10 @@ export function Home() {
                             />
                         )}
                         ItemSeparatorComponent={() => <ListDivider />}
+                        contentContainerStyle={{ paddingBottom: 69 }}
                         style={styles.matches}
                         showsVerticalScrollIndicator={false}
-                    />
-                </View>              
-        </View>
+                    />         
+    </Background>
     );
 };
