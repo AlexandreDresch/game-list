@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { View,
-     Text,
-      Image      
+        Text,
+        Image      
     } from 'react-native';
 import { useNavigation } from "@react-navigation/native";
 
-import { AuthContext } from "../../hooks/auth";
+import { useAuth } from "../../hooks/auth";
 
 import { ButtonIcon } from "../../components/Buttonicon";
 import IllustrationImg from '../../assets/illustration.png';
@@ -15,8 +15,7 @@ import { styles } from "./styles";
 
 export function SignIn() {
     const navigation = useNavigation<any>();
-
-    const context = useContext(AuthContext);
+    const { user } = useAuth();
 
     function handleSignIn() {
         navigation.navigate('Home');
