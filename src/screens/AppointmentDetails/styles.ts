@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
         fontFamily: theme.fonts.text400,
         fontSize: 13,
         color: theme.colors.heading,
+        lineHeight: 21,
     },
     bannerContent: {
         flex: 1,
