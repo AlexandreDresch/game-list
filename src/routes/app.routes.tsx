@@ -5,13 +5,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Home } from '../screens/Home';
 import { AppointmentCreate } from "../screens/AppointmentCreate";
 import { AppointmentDetails } from "../screens/AppointmentDetails";
-import { SignIn } from '../screens/SignIn';
 
 
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
-export function AuthRoutes() {
+export function AppRoutes() {
     const navigatorOptions = {
         headerShown: false,
       }
@@ -21,10 +20,6 @@ export function AuthRoutes() {
         screenOptions={navigatorOptions}
         
         >
-            <Screen
-            name="SignIn"
-            component={SignIn}            
-            />
             <Screen
             name="Home"
             component={Home}            
