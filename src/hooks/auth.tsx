@@ -1,16 +1,22 @@
-import React, { createContext, ReactNode, useContext, useState } from "react";
+import React, { createContext, 
+    ReactNode, 
+    useContext, 
+    useState, 
+    useEffect, } from "react";
 
 import * as AuthSession from 'expo-auth-session';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import {
-    SCOPE,
-    CLIENT_ID,
-    CDN_IMAGE,
-    REDIRECT_URI,
-    RESPONSE_TYPE
-} from '../config';
+
+const { SCOPE } = process.env;
+const { CLIENT_ID } = process.env;
+const { CDN_IMAGE } = process.env;
+const { REDIRECT_URI } = process.env;
+const { RESPONSE_TYPE } = process.env;
+
 
 import { api } from "../services/api";
+import { COLLECTION_USERS } from '../config/database';
 
 type User = {
     id: string;
@@ -19,24 +25,24 @@ type User = {
     avatar: string;
     email: string;
     token: string;
-}
+};
 
 type AuthContextData = {
     user: User;
     loading: boolean;
     signIn: () => Promise<void>;
-}
+};
 
 type AuthProviderProps = {
     children: ReactNode;
-}
+};
 
 type AuthrizationResponse = AuthSession.AuthSessionResult & {
     params: {
         access_token?: string;
         error?: string;
     }
-}
+};
 
 export const AuthContext = createContext({} as AuthContextData);
 
@@ -60,11 +66,15 @@ function AuthProvider({ children }: AuthProviderProps) {
                 const firstName = userInfo.data.username.split(' ')[0];
                 userInfo.data.avatar = `${CDN_IMAGE}/avatars/${userInfo.data.id}/${userInfo.data.avatar}.png`;
 
-                setUser({
+                const userData = {
                     ...userInfo.data,
                     firstName,
                     token: params.access_token
-                });
+                }
+
+                await AsyncStorage.setItem("COLLECTION_USERS", JSON.stringify(userData));
+
+                setUser(userData);
             }
         } catch {
             throw new Error("Could not authenticate");
@@ -73,6 +83,21 @@ function AuthProvider({ children }: AuthProviderProps) {
             setLoading(false);
         }
     }
+
+    async function loadUserStorageData() {
+        const storage = await AsyncStorage.getItem("COLLECTION_USERS");
+
+        if(storage) {
+            const userLogged = JSON.parse(storage) as User;
+            api.defaults.headers.authorization = `Bearer ${userLogged.token}`;
+
+            setUser(userLogged);
+        }
+    }
+
+    useEffect(() => {
+        loadUserStorageData();
+    },[]);
 
     return(
         <AuthContext.Provider value={{
