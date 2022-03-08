@@ -16,7 +16,7 @@ const { RESPONSE_TYPE } = process.env;
 
 
 import { api } from "../services/api";
-import { COLLECTION_USERS } from '../config/database';
+import { COLLECTION_USER } from '../config/database';
 
 type User = {
     id: string;
@@ -72,7 +72,7 @@ function AuthProvider({ children }: AuthProviderProps) {
                     token: params.access_token
                 }
 
-                await AsyncStorage.setItem("COLLECTION_USERS", JSON.stringify(userData));
+                await AsyncStorage.setItem(COLLECTION_USER, JSON.stringify(userData));
 
                 setUser(userData);
             }
@@ -85,7 +85,7 @@ function AuthProvider({ children }: AuthProviderProps) {
     }
 
     async function loadUserStorageData() {
-        const storage = await AsyncStorage.getItem("COLLECTION_USERS");
+        const storage = await AsyncStorage.getItem(COLLECTION_USER);
 
         if(storage) {
             const userLogged = JSON.parse(storage) as User;
