@@ -20,15 +20,15 @@ Remember to create your App on the Discord server to get the authentication cred
 
 ## Features
 
--   [ ] Autenticação Social OAuth2 com servidor do Discord.
--   [ ] Obtém perfil do usuário cadastro no Discord (username e avatar);
--   [ ] Lista os servidores do Discord que o usuário faz parte;
--   [ ] Permite realizar o agendamento de partidas;
--   [ ] Permite filtrar as partidas por categoria;
--   [ ] Exibe se a partida foi agendada em um servidor próprio (anfitrião) ou em servidores de outros (convidado);
--   [ ] Compartilha o convite para ingressar no servidor do usuário;
--   [ ] Permite redirecionar o usuário para o seu próprio servidor;
--   [ ] Disponibiliza a função de Logout.
+-   [ ] OAuth2 Social Authentication with Discord Server;
+-   [ ] Get user profile registered on Discord (username and avatar);
+-   [ ] Lists the Discord servers the user is a part of;
+-   [ ] Allows you to schedule matches;
+-   [ ] Allows you to filter matches by category;
+-   [ ] Shows whether the match was scheduled on a server of its own (host) or on servers of others (guest);
+-   [ ] Shares the invitation to join the user's server;
+-   [ ] Allows you to redirect the user to your own server;
+-   [ ] Provides the Logout function.
 
 
 ## Technologies
@@ -50,5 +50,5 @@ Remember to create your App on the Discord server to get the authentication cred
 -   [ ] React Native Share
 -   [ ] Deep Link
 
-
+## Project developed in React Native mission in NLW #06
 <br />
