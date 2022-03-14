@@ -2,7 +2,6 @@ import React from "react";
 import { View, Text, TouchableOpacity, TouchableOpacityProps } from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
 import { SvgProps } from 'react-native-svg';
-import { RectButton, RectButtonProps } from "react-native-gesture-handler";
 
 import { styles } from "./styles";
 import { theme } from "../../global/styles/theme";

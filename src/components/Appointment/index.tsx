@@ -46,10 +46,6 @@ export function Appointment({ data, ...rest}: Props) {
                         <Text style={styles.title}>
                             { data.guild.name }
                         </Text>
-
-                        <Text style={styles.category}> 
-                            { category.title }
-                        </Text>
                     </View>
 
                     <View style={styles.footer}>

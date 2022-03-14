@@ -110,7 +110,7 @@ function AuthProvider({ children }: AuthProviderProps) {
             user,
             loading,
             signIn, 
-            signOut
+            signOut,
         }}>
             { children }
         </AuthContext.Provider>
